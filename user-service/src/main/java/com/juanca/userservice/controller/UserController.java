@@ -3,6 +3,7 @@ package com.juanca.userservice.controller;
 import com.juanca.userservice.entity.User;
 import com.juanca.userservice.service.UserService;
 import java.util.List;
+import java.util.Map;
 import model.Bike;
 import model.Car;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -87,4 +88,33 @@ public class UserController {
        return ResponseEntity.ok(bikes);
     }
     
+    @PostMapping("/user/savecar/{idUser}")
+    public ResponseEntity<Car> guardarCar(@RequestBody Car car,@PathVariable("idUser") int idUser)
+    {
+       if(userService.getUserById(idUser)==null)
+           return ResponseEntity.notFound().build();
+        
+       Car carNew = userService.guardarCar(car, idUser);
+       
+       return ResponseEntity.ok(carNew);
+    }
+    
+    @PostMapping("/user/savebike/{idUser}")
+    public ResponseEntity<Bike> guardarBike(@RequestBody Bike bike,@PathVariable("idUser") int idUser)
+    {
+       if(userService.getUserById(idUser)==null)
+           return ResponseEntity.notFound().build();
+        
+       Bike bikeNew = userService.guardarBike(bike,idUser);
+       
+       return ResponseEntity.ok(bikeNew);
+    }
+    
+    @GetMapping("/user/getAll/{userId}")
+    public ResponseEntity<Map<String,Object>> listarTodosLosVehiculosPorIdUser(@PathVariable("userId") int idUser)
+    {
+       Map<String,Object> resultAllVehiculos = userService.getUserAndVehicles(idUser);
+       
+       return ResponseEntity.ok(resultAllVehiculos);
+    }
 }

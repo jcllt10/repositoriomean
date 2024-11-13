@@ -44,7 +44,7 @@ public class BikeController {
     
     
     @PostMapping("/bike")
-    public ResponseEntity<Bike> insertCar(@RequestBody Bike bike)
+    public ResponseEntity<Bike> insertBike(@RequestBody Bike bike)
     {
         Bike newbike = bikeService.insertBike(bike);
         

@@ -4,13 +4,12 @@ server:
 #configuramos la ubicacion y acceso a la base de datos
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3307/bd_service_bike
+    url: jdbc:mysql://localhost:3307/bd_service_user
     username: root
     password: 
 #spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 
 #configurar JPA
-spring:
   jpa:
     properties:
       hibernate:

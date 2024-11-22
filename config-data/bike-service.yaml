@@ -1,6 +1,16 @@
 server:
   port: 8023
 
+#configuramos el cliente de Eureka
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      default-zone: http://localhost:8761/eureka
+    instance:
+      hostname: localhost
+
 #configuramos la ubicacion y acceso a la base de datos
 spring:
   datasource:

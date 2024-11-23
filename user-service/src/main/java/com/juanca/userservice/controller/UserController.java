@@ -16,13 +16,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/v1")
+//@RequestMapping("/api/v1")
 public class UserController {
     
     @Autowired
     private UserService userService;
     
-    @GetMapping("/users")
+    @GetMapping("/usr/users")
     public ResponseEntity<List<User>> listarUsers()
     {
         List<User> listaUsers = userService.listUsers();
@@ -35,7 +35,7 @@ public class UserController {
          return ResponseEntity.ok(listaUsers);
     }
     
-    @GetMapping("/user/{id}")
+    @GetMapping("/usr/user/{id}")
     public ResponseEntity<User> getUser(@PathVariable int id)
     {
         User searchUser = userService.getUserById(id);
@@ -48,7 +48,7 @@ public class UserController {
          return ResponseEntity.ok(searchUser);
     }
     
-    @PostMapping("/user")
+    @PostMapping("/usr/user")
     public ResponseEntity<User> registrarUser(@RequestBody User user)
     {
         User newUser = userService.insertUser(user);
@@ -56,7 +56,7 @@ public class UserController {
         return ResponseEntity.ok(newUser);
     }
     
-    @GetMapping("/user/cars/{idUser}")
+    @GetMapping("/usr/user/cars/{idUser}")
     public ResponseEntity<List<Car>> listarCarsPorIdUser(@PathVariable("idUser") int idUser)
     {
        User user = userService.getUserById(idUser);
@@ -72,7 +72,7 @@ public class UserController {
        return ResponseEntity.ok(cars);
     }
     
-    @GetMapping("/user/bikes/{idUser}")
+    @GetMapping("/usr/user/bikes/{idUser}")
     public ResponseEntity<List<Bike>> listarBikesPorIdUser(@PathVariable("idUser") int idUser)
     {
        User user = userService.getUserById(idUser);
@@ -88,7 +88,7 @@ public class UserController {
        return ResponseEntity.ok(bikes);
     }
     
-    @PostMapping("/user/savecar/{idUser}")
+    @PostMapping("/usr/user/savecar/{idUser}")
     public ResponseEntity<Car> guardarCar(@RequestBody Car car,@PathVariable("idUser") int idUser)
     {
        if(userService.getUserById(idUser)==null)
@@ -99,7 +99,7 @@ public class UserController {
        return ResponseEntity.ok(carNew);
     }
     
-    @PostMapping("/user/savebike/{idUser}")
+    @PostMapping("/usr/user/savebike/{idUser}")
     public ResponseEntity<Bike> guardarBike(@RequestBody Bike bike,@PathVariable("idUser") int idUser)
     {
        if(userService.getUserById(idUser)==null)
@@ -110,7 +110,7 @@ public class UserController {
        return ResponseEntity.ok(bikeNew);
     }
     
-    @GetMapping("/user/getAll/{userId}")
+    @GetMapping("/usr/user/getAll/{userId}")
     public ResponseEntity<Map<String,Object>> listarTodosLosVehiculosPorIdUser(@PathVariable("userId") int idUser)
     {
        Map<String,Object> resultAllVehiculos = userService.getUserAndVehicles(idUser);

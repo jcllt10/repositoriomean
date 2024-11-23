@@ -19,7 +19,7 @@ public class BikeController {
      @Autowired
     private BikeService bikeService;
     
-    @GetMapping("/bikes")
+    @GetMapping("/bk/bikes")
     public ResponseEntity<List<Bike>> listarBikes()
     {
         List<Bike> listBikes = bikeService.listBikes();
@@ -31,7 +31,7 @@ public class BikeController {
     }
     
     
-    @GetMapping("/bike/{id}")
+    @GetMapping("/bk/bike/{id}")
     public ResponseEntity<Bike> getBike(@PathVariable int id)
     {
         Bike searchBike = bikeService.getBike(id);
@@ -43,7 +43,7 @@ public class BikeController {
     }
     
     
-    @PostMapping("/bike")
+    @PostMapping("/bk/bike")
     public ResponseEntity<Bike> insertBike(@RequestBody Bike bike)
     {
         Bike newbike = bikeService.insertBike(bike);
@@ -51,7 +51,7 @@ public class BikeController {
         return ResponseEntity.ok(newbike);
     }
     
-    @GetMapping("/bikes/{userId}")
+    @GetMapping("/bk/bikes/{userId}")
     public ResponseEntity<List<Bike>> listarBikesByUserId(@PathVariable int userId)
     {
         List<Bike> listBikes = bikeService.byUserId(userId);

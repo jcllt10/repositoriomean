@@ -14,10 +14,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 //@RequestMapping("/api/v1")
 public interface CarFeignClient {
     
-    @PostMapping("/car")
+    @PostMapping("/cr/car")
     Car insertCar(@RequestBody Car car);
     
-    @GetMapping("/cars/{userId}")
+    @GetMapping("/cr/cars/{userId}")
     List<Car> listarCarsByUserId(@PathVariable("userId") int userId);
     
 }

@@ -8,6 +8,6 @@ spring:
             server:
                 #configurando el repositorio de git cambiando de rama
                 git:
-                    default-label: multiple-instances
+                    default-label: gateway
                     uri: https://github.com/jcllt10/repositoriomean
                     search-paths: config-data

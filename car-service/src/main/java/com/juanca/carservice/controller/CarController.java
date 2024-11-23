@@ -19,7 +19,7 @@ public class CarController {
     @Autowired
     private CarService carService;
     
-    @GetMapping("/cars")
+    @GetMapping("/cr/cars")
     public ResponseEntity<List<Car>> listarCars()
     {
         List<Car> listCars = carService.listCars();
@@ -31,7 +31,7 @@ public class CarController {
     }
     
     
-    @GetMapping("/car/{id}")
+    @GetMapping("/cr/car/{id}")
     public ResponseEntity<Car> getCar(@PathVariable int id)
     {
         Car searchCar = carService.getCar(id);
@@ -43,7 +43,7 @@ public class CarController {
     }
     
     
-    @PostMapping("/car")
+    @PostMapping("/cr/car")
     public ResponseEntity<Car> insertCar(@RequestBody Car car)
     {
         Car newcar = carService.insertCar(car);
@@ -51,7 +51,7 @@ public class CarController {
         return ResponseEntity.ok(newcar);
     }
     
-    @GetMapping("/cars/{userId}")
+    @GetMapping("/cr/cars/{userId}")
     public ResponseEntity<List<Car>> listarCarsByUserId(@PathVariable int userId)
     {
         List<Car> listCars = carService.byUserId(userId);

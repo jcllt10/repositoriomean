@@ -1,0 +1,8 @@
+spring:
+    application:
+        name: gateway-service
+    cloud:
+        #apuntando al repositorio de config
+        config:
+            enabled: true
+            uri: http://localhost:8081

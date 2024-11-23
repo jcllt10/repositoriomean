@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 //@RequestMapping("/api/v1")
 public interface BikeFeignClient {
     
-    @PostMapping("/bike")
+    @PostMapping("/bk/bike")
     Bike insertBike(@RequestBody Bike bike);
     
-    @GetMapping("/bikes/{userId}")
+    @GetMapping("/bk/bikes/{userId}")
     List<Bike> listarBikesByUserId(@PathVariable("userId") int userId);
 }

@@ -8,6 +8,6 @@ spring:
             server:
                 #configurando el repositorio de git
                 git:
-                    default-label: eureka
+                    default-label: multiple-instances
                     uri: https://github.com/jcllt10/repositoriomean
                     search-paths: config-data

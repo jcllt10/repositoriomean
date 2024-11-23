@@ -19,6 +19,7 @@ public class CarController {
     @Autowired
     private CarService carService;
     
+    //endpoint actualizado
     @GetMapping("/cr/cars")
     public ResponseEntity<List<Car>> listarCars()
     {

@@ -6,8 +6,8 @@ spring:
     cloud:
         config:
             server:
-                #configurando el repositorio de git cambiando de rama
+                #configurando el repositorio de git e indicando la rama
                 git:
-                    default-label: gateway
+                    default-label: circuit-breaker
                     uri: https://github.com/jcllt10/repositoriomean
                     search-paths: config-data

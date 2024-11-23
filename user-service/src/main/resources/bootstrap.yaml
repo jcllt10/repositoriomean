@@ -2,7 +2,7 @@ spring:
     application:
         name: user-service
     cloud:
-        #apuntando al repositorio de config
+        #apuntando al repositorio de config para la configuracion
         config:
             enabled: true
             uri: http://localhost:8081

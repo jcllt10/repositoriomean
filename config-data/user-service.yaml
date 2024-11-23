@@ -1,19 +1,10 @@
 server:
   port: ${PORT:${SERVER_PORT:0}}
 
-#configuramos el cliente de Eureka
-eureka:
-  client:
-    fetch-registry: true
-    register-with-eureka: true
-    service-url:
-      default-zone: http://localhost:8761/eureka
-  instance:
-    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
-    #hostname: localhost
-
 #configuramos la ubicacion y acceso a la base de datos
 spring:
+  application:
+    name: user-service
   datasource:
     url: jdbc:mysql://localhost:3307/bd_service_user
     username: root
@@ -30,3 +21,12 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: update
+
+#configuramos el cliente de Eureka
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+    #hostname: localhost

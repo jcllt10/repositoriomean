@@ -2,7 +2,7 @@ spring:
     application:
         name: bike-service
     cloud:
-        #apuntando al repositorio de configuracion
+        #apuntando al repositorio de config
         config:
             enabled: true
             uri: http://localhost:8081
